@@ -51,6 +51,15 @@
     }
   }
 
+  &--green {
+    background: $color-green-light;
+    color: $color-white;
+
+    &::after {
+      background: $color-green-light;
+    }
+  }
+
   &--animated {
     animation: moveInBottom .4s ease-in .75s;
     animation-fill-mode: backwards;
