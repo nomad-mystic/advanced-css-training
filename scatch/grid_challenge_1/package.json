@@ -1,0 +1,16 @@
+{
+  "name": "grid_challenge_1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:sass": "node-sass -w ./sass/styles.scss ./css/style.css",
+    "dev:server": "node live-server"
+  },
+  "author": "Keith Murphy",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "node-sass": "^4.10.0"
+  }
+}
