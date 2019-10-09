@@ -1,0 +1,29 @@
+name: Okta.com Github Action Cleanup Multidev
+
+on:
+  pull_request:
+    branches:
+      - master
+    types: [closed]
+
+jobs:
+  testing_on_closed:
+    name: Testing PR number GitHub API
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: Display GitHub environment varaibles (DEBUG)
+        # @link https://github.com/launchdarkly/find-code-references/issues/1
+        run: |
+          echo ${GITHUB_REF}
+          echo ${GITHUB_SHA}
+          echo ${{github.head_ref}}
+          echo ${{github.commit_id}}
+          echo ${GITHUB_REF:11}
+          echo ${GITHUB_WORKSPACE}
+          echo ${HOME}
+          cd ${HOME} && ls -al
+          echo ${GITHUB_WORKSPACE}
+          cd ${GITHUB_WORKSPACE} && ls -al
+          exit 0
